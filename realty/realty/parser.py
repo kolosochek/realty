@@ -1,7 +1,7 @@
 import math
 import re
 from grab import Grab, GrabError, GrabNetworkError, GrabTimeoutError
-from realty.realty.models import RealtyAd
+from .models import RealtyAd
 
 
 class RealtyParser:
@@ -74,9 +74,19 @@ class RealtyParser:
         ad["short_description"] = short_description_node.text_content().strip() if short_description_node else ''
         ad["city"] = city_node.text_content().strip()
 
-        RealtyAd.cre
 
-
+        # create django model object
+        ad_object = RealtyAd(
+            url=ad["url"],
+            title=ad["title"],
+            type=ad["type"],
+            thumbnail=ad["thumbnail"],
+            price=ad["price"],
+            short_description=ad["short_description"],
+            city=ad["city"]
+        )
+        # and save it fur teh justice
+        ad_object.save()
 
         if self.debug:
             print("ad")
