@@ -1,0 +1,32 @@
+div.field-images_tag .readonly {
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+}
+
+div.field-images_tag .b-image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-right: 1.5em;
+}
+
+div.field-images_tag .b-image-wrapper .b-link {
+    text-align: center;
+    display: block;
+}
+
+div.field-images_tag .b-image-wrapper .b-link .b-image {
+    padding-bottom: 1em;
+}
+
+.b-flex {
+    display: flex
+}
+
+.b-images-tag-list {
+    align-items: center;
+}
+
+.b-images-tag-list .b-title {
+    padding-left: 2em;
+}
